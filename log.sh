@@ -6,3 +6,8 @@ awk 'BEGIN{printf "Sr No\tName\tSub\tMarks\n"} {print}' marks.txt
 #3)  Shyam   Biology  87
 #4)  Kedar   English  85
 #5)  Hari    History  89
+
+awk '/ul/ {print $0}' marks.txt 
+#output: 
+#2)  Rahul   Maths    90
+
