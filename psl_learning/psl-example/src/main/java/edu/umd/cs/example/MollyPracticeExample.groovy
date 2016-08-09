@@ -137,7 +137,7 @@ m.add rule: ~SamePerson(A,B), weight: 1
 /*
  * Let's see what our model looks like.
  */
-println m;
+//println m;
 
 /* 
  * We now insert data into our DataStore. All data is stored in a partition.
@@ -229,11 +229,12 @@ inferenceApp.close();
 /*
  * Let's see the results
  */
-println "Inference results with hand-defined weights:"
+//println "Inference results with hand-defined weights:"
 DecimalFormat formatter = new DecimalFormat("#.##");
 for (GroundAtom atom : Queries.getAllAtoms(db, SamePerson))
-	println atom.toString() + "\t" + formatter.format(atom.getValue());
-
+//	println atom.toString() + "\t" + formatter.format(atom.getValue());
+    {println "dummy1";
+    break;}
 /* 
  * Next, we want to learn the weights from data. For that, we need to have some
  * evidence data from which we can learn. In our example, that means we need to
@@ -257,9 +258,9 @@ weightLearning.close();
 /*
  * Let's have a look at the newly learned weights.
  */
-println ""
-println "Learned model:"
-println m
+//println ""
+//println "Learned model:"
+//println m
 
 /*
  * Now, we apply the learned model to a different social network alignment data set.
@@ -305,10 +306,11 @@ inferenceApp = new MPEInference(m, db2, config);
 result = inferenceApp.mpeInference();
 inferenceApp.close();
 
-println "Inference results on second social network with learned weights:"
+//println "Inference results on second social network with learned weights:"
 for (GroundAtom atom : Queries.getAllAtoms(db2, SamePerson))
-	println atom.toString() + "\t" + formatter.format(atom.getValue());
-	
+//	println atom.toString() + "\t" + formatter.format(atom.getValue());
+    {println "dummy2";
+    break}	
 /*
  * We close the Databases to flush writes
  */
