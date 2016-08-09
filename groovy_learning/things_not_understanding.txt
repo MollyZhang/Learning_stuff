@@ -1,0 +1,5 @@
+From "learn groovy in Y minutes" tutorial
+
+1. the access modifier of both java and groovy
+2. the groovy safe navigation operator
+3. the Expando class example
