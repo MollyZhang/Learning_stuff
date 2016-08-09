@@ -17,4 +17,4 @@ more information on PSL: http://psl.umiacs.umd.edu
 
 `mvn dependency:build-classpath -Dmdep.outputFile=classpath.out`
 
-``java -cp ./target/classes: `cat classpath.out` edu.umd.cs.example.MollyPracticeeExample`
+``java -cp ./target/classes: `cat classpath.out` edu.umd.cs.example.MollyPracticeeExample``
