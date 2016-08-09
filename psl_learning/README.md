@@ -19,3 +19,8 @@ more information on PSL: http://psl.umiacs.umd.edu
 #####3. Run:
 
 ``java -cp ./target/classes:`cat classpath.out` edu.umd.cs.example.MollyPracticeExample``
+
+### Shell script for running:
+./psl-example/compile_and_run.sh
+
+
