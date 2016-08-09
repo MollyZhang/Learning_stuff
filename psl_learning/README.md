@@ -13,8 +13,8 @@ more information on PSL: http://psl.umiacs.umd.edu
 
 `cd psl-example`
 
-`mvn complie`
+`mvn compile`
 
 `mvn dependency:build-classpath -Dmdep.outputFile=classpath.out`
 
-``java -cp ./target/classes: `cat classpath.out` edu.umd.cs.example.MollyPracticeeExample``
+``java -cp ./target/classes:`cat classpath.out` edu.umd.cs.example.MollyPracticeeExample``
