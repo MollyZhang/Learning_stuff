@@ -76,9 +76,12 @@ InserterUtils.loadDelimitedData(insert, dir+"sn_network.txt");
 insert = data.getInserter(Knows, evidencePartition)
 InserterUtils.loadDelimitedData(insert, dir+"sn_knows.txt");
 
-// loads target
+println evidencePartition
+
 def targetPartition = new Partition(1);
 Database db = data.getDatabase(targetPartition, [Network, Name, Knows] as Set, evidencePartition);
+
+print ToStringBuilder.reflectionToString(db)
 
 Set<GroundTerm> usersA = new HashSet<GroundTerm>();
 Set<GroundTerm> usersB = new HashSet<GroundTerm>();

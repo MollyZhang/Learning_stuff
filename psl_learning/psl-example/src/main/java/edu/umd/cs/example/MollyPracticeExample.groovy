@@ -39,8 +39,8 @@ DataStore data = new RDBMSDataStore(new H2DatabaseDriver(Type.Disk, dbpath, true
 PSLModel m = new PSLModel(this, data)
 
 ////////////////////////// predicate declaration ////////////////////////
-m.add predicate: "Person",       types: [ArgumentType.UniqueID]
-m.add predicate: "Location",     types: [ArgumentType.UniqueID]
+m.add predicate: "Person",       types: [ArgumentType.UniqueID, ArgumentType.String]
+m.add predicate: "Location",     types: [ArgumentType.UniqueID, ArgumentType.String]
 m.add predicate: "Knows",        types: [ArgumentType.UniqueID, ArgumentType.UniqueID]
 m.add predicate: "Lives",        types: [ArgumentType.UniqueID, ArgumentType.UniqueID]
 
@@ -51,40 +51,26 @@ m.add rule: ~Lives(P, L), weight: 2
 
 println m;
 
-/*
 //////////////////////////// data setup ///////////////////////////
 // loads data
-def dir = 'data'+java.io.File.separator+'sn'+java.io.File.separator;
+def dir = 'data'+java.io.File.separator+'cli'+java.io.File.separator;
 def evidencePartition = new Partition(0);
 
-insert = data.getInserter(Name, evidencePartition);
-InserterUtils.loadDelimitedData(insert, dir+"sn_names.txt");
+insert = data.getInserter(Person, evidencePartition);
+InserterUtils.loadDelimitedData(insert, dir+"person.txt");
 
-insert = data.getInserter(Network, evidencePartition)
-InserterUtils.loadDelimitedData(insert, dir+"sn_network.txt");
+insert = data.getInserter(Location, evidencePartition);
+InserterUtils.loadDelimitedData(insert, dir+"location.txt");
 
-insert = data.getInserter(Knows, evidencePartition)
-InserterUtils.loadDelimitedData(insert, dir+"sn_knows.txt");
+insert = data.getInserter(Knows, evidencePartition);
+InserterUtils.loadDelimitedData(insert, dir+"knows_obs.txt");
 
-// loads target
+insert = data.getInserter(Lives, evidencePartition);
+InserterUtils.loadDelimitedData(insert, dir+"lives_obs.txt");
+
+
 def targetPartition = new Partition(1);
-Database db = data.getDatabase(targetPartition, [Network, Name, Knows] as Set, evidencePartition);
-
-Set<GroundTerm> usersA = new HashSet<GroundTerm>();
-Set<GroundTerm> usersB = new HashSet<GroundTerm>();
-for (int i = 1; i < 8; i++)
-	usersA.add(data.getUniqueID(i));
-for (int i = 11; i < 18; i++)
-	usersB.add(data.getUniqueID(i));
-
-Map<Variable, Set<GroundTerm>> popMap = new HashMap<Variable, Set<GroundTerm>>();
-popMap.put(new Variable("UserA"), usersA)
-popMap.put(new Variable("UserB"), usersB)
-
-DatabasePopulator dbPop = new DatabasePopulator(db);
-dbPop.populate((SamePerson(UserA, UserB)).getFormula(), popMap);
-dbPop.populate((SamePerson(UserB, UserA)).getFormula(), popMap);
-
+Database db = data.getDatabase(targetPartition, [Person, Location, Knows, Lives] as Set, evidencePartition);
 
 //////////////////////////// run inference ///////////////////////////
 MPEInference inferenceApp = new MPEInference(m, db, config);
@@ -93,8 +79,17 @@ inferenceApp.close();
 
 println "Inference results with hand-defined weights:"
 DecimalFormat formatter = new DecimalFormat("#.##");
-for (GroundAtom atom : Queries.getAllAtoms(db, SamePerson))
+for (GroundAtom atom : Queries.getAllAtoms(db, Person))
     println atom.toString() + "\t" + formatter.format(atom.getValue());
+
+for (GroundAtom atom : Queries.getAllAtoms(db, Knows))
+    println atom.toString() + "\t" + formatter.format(atom.getValue());
+
+for (GroundAtom atom : Queries.getAllAtoms(db, Lives))
+    println atom.toString() + "\t" + formatter.format(atom.getValue());
+
+
+/*
 
 //////////////////////////// weight learning ///////////////////////////
 Partition trueDataPartition = new Partition(2);
