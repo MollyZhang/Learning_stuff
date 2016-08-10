@@ -1,3 +1,5 @@
+//    impliment basic commandline psl example
+
 package edu.umd.cs.example;
 
 import java.text.DecimalFormat;
@@ -37,31 +39,19 @@ DataStore data = new RDBMSDataStore(new H2DatabaseDriver(Type.Disk, dbpath, true
 PSLModel m = new PSLModel(this, data)
 
 ////////////////////////// predicate declaration ////////////////////////
-m.add predicate: "Network",    types: [ArgumentType.UniqueID, ArgumentType.UniqueID]
-m.add predicate: "Name",       types: [ArgumentType.UniqueID, ArgumentType.String]
-m.add predicate: "Knows",      types: [ArgumentType.UniqueID, ArgumentType.UniqueID]
-m.add predicate: "SamePerson", types: [ArgumentType.UniqueID, ArgumentType.UniqueID]
-
-m.add function: "SameName" , implementation: new LevenshteinSimilarity()
+m.add predicate: "Person",       types: [ArgumentType.UniqueID]
+m.add predicate: "Location",     types: [ArgumentType.UniqueID]
+m.add predicate: "Knows",        types: [ArgumentType.UniqueID, ArgumentType.UniqueID]
+m.add predicate: "Lives",        types: [ArgumentType.UniqueID, ArgumentType.UniqueID]
 
 ///////////////////////////// rules ////////////////////////////////////
-GroundTerm snA = data.getUniqueID(1);
-GroundTerm snB = data.getUniqueID(2);
-m.add rule : ( Network(A, snA) & Network(B, snB) & Name(A,X) & Name(B,Y)
-	& SameName(X,Y) ) >> SamePerson(A,B),  weight : 5
-m.add rule : ( Network(A, snA) & Network(B, snB) & SamePerson(A,B) & Knows(A, Friend1)
-	& Knows(B, Friend2) ) >> SamePerson(Friend1, Friend2) , weight : 3.2
-
-// constraints
-m.add PredicateConstraint.PartialFunctional, on : SamePerson
-m.add PredicateConstraint.PartialInverseFunctional, on : SamePerson
-m.add PredicateConstraint.Symmetric, on : SamePerson
-
-// prior
-m.add rule: ~SamePerson(A,B), weight: 1
+m.add rule : ( Knows(P1, P2) & Lives(P1, L) ) >> Lives(P2, L),  weight : 10
+m.add rule : ( Knows(P2, P1) & Lives(P1, L) ) >> Lives(P2, L),  weight : 10
+m.add rule: ~Lives(P, L), weight: 2
 
 println m;
 
+/*
 //////////////////////////// data setup ///////////////////////////
 // loads data
 def dir = 'data'+java.io.File.separator+'sn'+java.io.File.separator;
@@ -123,4 +113,4 @@ println m
 // close the Databases to flush writes
 db.close();
 trueDataDB.close();
-
+*/
