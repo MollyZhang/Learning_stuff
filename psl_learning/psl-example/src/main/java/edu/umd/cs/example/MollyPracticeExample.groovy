@@ -18,6 +18,7 @@
 package edu.umd.cs.example;
 
 import java.text.DecimalFormat;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import edu.umd.cs.psl.application.inference.MPEInference;
 import edu.umd.cs.psl.application.learning.weight.maxlikelihood.MaxLikelihoodMPE;
@@ -58,7 +59,7 @@ ConfigBundle config = cm.getBundle("basic-example")
 def defaultPath = System.getProperty("java.io.tmpdir")
 String dbpath = config.getString("dbpath", defaultPath + File.separator + "basic-example")
 DataStore data = new RDBMSDataStore(new H2DatabaseDriver(Type.Disk, dbpath, true), config)
-
+println ToStringBuilder.reflectionToString(data)
 /*
  * Now we can initialize a PSLModel, which is the core component of PSL.
  * The first constructor argument is the context in which the PSLModel is defined.
