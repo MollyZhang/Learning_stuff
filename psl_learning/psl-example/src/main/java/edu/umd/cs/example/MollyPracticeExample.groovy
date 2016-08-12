@@ -63,14 +63,18 @@ insert = data.getInserter(Location, evidencePartition);
 InserterUtils.loadDelimitedData(insert, dir+"location.txt");
 
 insert = data.getInserter(Knows, evidencePartition);
-InserterUtils.loadDelimitedData(insert, dir+"knows_obs.txt");
+InserterUtils.loadDelimitedData(insert, dir+"knows.txt");
 
 insert = data.getInserter(Lives, evidencePartition);
-InserterUtils.loadDelimitedData(insert, dir+"lives_obs.txt");
+InserterUtils.loadDelimitedData(insert, dir+"lives.txt");
 
-
+// add target atoms
 def targetPartition = new Partition(1);
-Database db = data.getDatabase(targetPartition, [Person, Location, Knows, Lives] as Set, evidencePartition);
+insert = data.getInserter(Lives, targetPartition);
+InserterUtils.loadDelimitedData(insert, dir+"lives_targets.txt");
+
+
+Database db = data.getDatabase(targetPartition, [Person, Location, Knows] as Set, evidencePartition);
 
 //////////////////////////// run inference ///////////////////////////
 MPEInference inferenceApp = new MPEInference(m, db, config);
@@ -80,6 +84,9 @@ inferenceApp.close();
 println "Inference results with hand-defined weights:"
 DecimalFormat formatter = new DecimalFormat("#.##");
 for (GroundAtom atom : Queries.getAllAtoms(db, Person))
+    println atom.toString() + "\t" + formatter.format(atom.getValue());
+
+for (GroundAtom atom : Queries.getAllAtoms(db, Location))
     println atom.toString() + "\t" + formatter.format(atom.getValue());
 
 for (GroundAtom atom : Queries.getAllAtoms(db, Knows))

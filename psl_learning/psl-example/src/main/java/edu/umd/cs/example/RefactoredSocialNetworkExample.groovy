@@ -76,15 +76,14 @@ InserterUtils.loadDelimitedData(insert, dir+"sn_network.txt");
 insert = data.getInserter(Knows, evidencePartition)
 InserterUtils.loadDelimitedData(insert, dir+"sn_knows.txt");
 
-println evidencePartition
 
 def targetPartition = new Partition(1);
 Database db = data.getDatabase(targetPartition, [Network, Name, Knows] as Set, evidencePartition);
 
-print ToStringBuilder.reflectionToString(db)
 
 Set<GroundTerm> usersA = new HashSet<GroundTerm>();
 Set<GroundTerm> usersB = new HashSet<GroundTerm>();
+
 for (int i = 1; i < 8; i++)
 	usersA.add(data.getUniqueID(i));
 for (int i = 11; i < 18; i++)
