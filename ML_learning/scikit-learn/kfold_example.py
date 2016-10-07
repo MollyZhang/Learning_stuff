@@ -1,17 +1,20 @@
 from sklearn.model_selection import KFold
+import pandas as pd
 
-X = range(20)
-print "data:\n", X
+
+df = pd.DataFrame(range(20))
+
+print "data:\n", df
 kf = KFold(n_splits=5, shuffle=True, random_state=0)
 
 tests = []
 trains = []
 
 fold = 1
-for train_idx, val_idx in kf.split(X):
+for train_idx, val_idx in kf.split(df):
     print "fold", fold
-    print "train", train_idx
-    print "validation", val_idx
+    print "train\n", df.iloc[train_idx]
+    print "validation\n", df.iloc[val_idx]
     fold += 1
     trains += list(train_idx)
     tests += list(val_idx)
