@@ -7,13 +7,19 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 from thinkbayes import Pmf
 
-pmf = Pmf()
-pmf.Set('Bowl 1', 0.5)
-pmf.Set('Bowl 2', 0.5)
+class Cookie(Pmf):
+    def __init__(self, hypos):
+        Pmf.__init__(self)
+        for hypo in hypos:
+            self.Set(hypo, 1)
+        self.Normalize()
 
-pmf.Mult('Bowl 1', 0.75)
-pmf.Mult('Bowl 2', 0.5)
+    def Update(self, data):
+        for hypo in self.Values():
+            like = self.Likelihood(data, hypo)
+            self.Mult(hypo, like)
+        self.Normalize()
 
-pmf.Normalize()
+hypos = ["bow1", "bow2"]
+pmf = Cookie(hypos)
 
-print pmf.Prob('Bowl 1')
