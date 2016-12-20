@@ -1,9 +1,8 @@
 File file = new File("data/gene.txt")
-lines = file.readLines();
 
 def genes = []
-for (line in lines) {
+for (line in file.readLines()) {
     genes << line.split("\t")[0]
 }
-print genes
+println genes
 
