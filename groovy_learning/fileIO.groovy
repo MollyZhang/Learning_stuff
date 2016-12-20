@@ -1,2 +1,9 @@
-File file = new File("things_not_understanding.txt")
-println file.text.split("\n");
+File file = new File("data/gene.txt")
+lines = file.readLines();
+
+def genes = []
+for (line in lines) {
+    genes << line.split("\t")[0]
+}
+print genes
+
