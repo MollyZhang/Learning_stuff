@@ -3,17 +3,17 @@
 import multiprocessing
 import time
 
+LETTERS = "A" * 100
 
 def f(s):
-    for i in range(10**7):
+    for i in range(10**6):
         1 == 1 + 2
     print(s, end="")
 
 
 def single_thread():
     t0 = time.time()
-    letters = "ABCDEFG"
-    for letter in letters:
+    for letter in LETTERS:
         f(letter)
     return time.time() - t0
 
@@ -21,7 +21,7 @@ def single_thread():
 def multi_thread(n_threads):
     t0 = time.time()
     p = multiprocessing.Pool(n_threads)
-    p.map(f, "ABCDEFG")
+    p.map(f, LETTERS)
     return time.time() - t0
 
 
