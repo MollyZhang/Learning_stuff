@@ -5,9 +5,16 @@ import time
 
 LETTERS = "A" * 100
 
-def f(s):
+def f(s, num=1):
     for i in range(10**6):
-        1 == 1 + 2
+        1 == 1 + num
+    print(s, end="")
+
+
+def f_(zipped):
+    (s, num) = zipped
+    for i in range(10**6):
+        1 == 1 + num
     print(s, end="")
 
 
@@ -21,7 +28,7 @@ def single_thread():
 def multi_thread(n_threads):
     t0 = time.time()
     p = multiprocessing.Pool(n_threads)
-    p.map(f, LETTERS)
+    p.map(f_, zip(list(LETTERS), [1]*len(LETTERS)))
     return time.time() - t0
 
 
