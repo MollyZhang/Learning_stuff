@@ -3,6 +3,11 @@ Decompose a matrix V of size (m x n) to muliplication of two smaller matrices W 
 
 There is no analytical solution to NMF, and instead, numerical approximate is done by minimize squared(||V - WH||) with respect to W and H subject to the constraints W, H >= 0. Possible numerical methods include coordinate descent and muliplicative update. In coordinate descent, W is fixed and H is optimized, and then H is fixed and W is optimized, the process iterates until tolerance is met. 
 
-#### References
-[youtube video lecture on NMF]()
+#### Implementation of NMF
+
+
+
+
+#### References for learning
+[youtube video lecture on NMF](https://www.youtube.com/watch?v=UQGEB3Q5-fQ)
 
