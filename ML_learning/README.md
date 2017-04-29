@@ -14,6 +14,6 @@
 
 ### 10-6-2016
 #### Confusion Matrix, AUC, plotting of ROC curve
-![confusion matrix terminology](http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/)
-![how to plot ROC curve](http://www.dataschool.io/roc-curves-and-auc-explained/)
-![sklearn example of ROC curve](http://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html#sphx-glr-auto-examples-model-selection-plot-roc-py)
+> [confusion matrix terminology](http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/)  
+> [how to plot ROC curve](http://www.dataschool.io/roc-curves-and-auc-explained/)  
+> [sklearn example of ROC curve](http://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html#sphx-glr-auto-examples-model-selection-plot-roc-py)
