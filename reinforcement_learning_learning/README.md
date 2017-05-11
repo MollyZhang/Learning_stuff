@@ -6,7 +6,7 @@
 
 ## Book notes
 simplified table of contents:
-![content](./image/content.jpg){width=70%}
+<img src="./image/content.jpg" alt="content" style="width:70%" />
 
 
 
@@ -61,5 +61,5 @@ some disccusions:
 </ul>
 
 #### 1.7 History  
-![history note](./image/history.jpg){width=70%} 
+<img src="./image/history.jpg" alt="history note" style="width:70%" />
 
