@@ -5,6 +5,13 @@
 
 
 ## Book notes
+simplified table of contents:
+![content](./image/content.jpg){width=70%}
+
+
+
+
+
 ### Chapter1: the reinforcement learning problem
 Learning from interaction with environment and maximum final reward
 
@@ -54,5 +61,5 @@ some disccusions:
 </ul>
 
 #### 1.7 History  
-![history note](./image/history.jpg) 
+![history note](./image/history.jpg){width=70%} 
 
