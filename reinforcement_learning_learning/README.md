@@ -10,8 +10,6 @@ simplified table of contents:
 
 
 
-
-
 ### Chapter1: the reinforcement learning problem
 Learning from interaction with environment and maximum final reward
 
@@ -62,4 +60,13 @@ some disccusions:
 
 #### 1.7 History  
 <img src="./image/history.jpg" alt="history note" style="width:70%" />
+
+
+#### Tabular methods:
+> Example: Bandit problem (only one state)  
+> Problem formulation: Finite Marcovian Decision Process
+> Three classes of methods:  
+> > dynamic programming
+> > monte carlo methods
+> > temporal-difference learning
 
