@@ -6,7 +6,7 @@
 
 ## Book notes
 simplified table of contents:
-<img src="./image/content.jpg" alt="content" style="width:70%" />
+<img src="./image/content.jpg" alt="content" width="70%" />
 
 
 
@@ -59,14 +59,19 @@ some disccusions:
 </ul>
 
 #### 1.7 History  
-<img src="./image/history.jpg" alt="history note" style="width:70%" />
+<img src="./image/history.jpg" alt="history note" width="70%" />
 
 
 #### Tabular methods:
-> Example: Bandit problem (only one state)  
-> Problem formulation: Finite Marcovian Decision Process
-> Three classes of methods:  
-> > dynamic programming
-> > monte carlo methods
-> > temporal-difference learning
+<ul>
+    <li>Example: Bandit problem (only one state)      </li>
+    <li>Problem formulation: Finite Marcovian Decision Process    </li>
+    <li>Three classes of methods:      
+        <ul>
+            <li> dynamic programming  </li>
+            <li> monte carlo methods  </li>
+            <li> temporal-difference learning</li>
+        </ul>
+    </li>
+<ul>
 
