@@ -62,7 +62,7 @@ some disccusions:
 <img src="./image/history.jpg" alt="history note" width="70%" />
 
 
-#### Tabular methods:
+#### Tabular methods:  
 <ul>
     <li>Example: Bandit problem (only one state)      </li>
     <li>Problem formulation: Finite Marcovian Decision Process    </li>
@@ -73,7 +73,8 @@ some disccusions:
             <li> temporal-difference learning</li>
         </ul>
     </li>
-<ul>
+</ul>  
+
 
 
 ### Chapter2: Multi-arm Bandits
