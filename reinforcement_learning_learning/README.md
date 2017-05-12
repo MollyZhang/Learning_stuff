@@ -5,7 +5,7 @@
 
 
 ## Book notes
-simplified table of contents:
+simplified table of contents:  
 <img src="./image/content.jpg" alt="content" width="70%" />
 
 
@@ -74,4 +74,13 @@ some disccusions:
         </ul>
     </li>
 <ul>
+
+
+### Chapter2: Multi-arm Bandits
+Problem: multiple slot machines, each with different reward probablilities that are unknown. How can one maximize reward? Hint: balance exploitation and exploration with reinforcement learning. 
+
+#### 2.2 Simpler methods:
+greedy: get a sample average of reward function of each bandit and greedily always select the bandit highest estimated reward.  
+$\epsilon$-greedy: like greedy method, but with probablility of $\epsilon$ explore alternative options. 
+
 
