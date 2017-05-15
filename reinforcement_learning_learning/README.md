@@ -139,15 +139,14 @@ Three key points:
     <li> Episodic tasks: episode is a sequence of itneractions that ends with a terminal state. Next episode start with states refreshed regardless of how previous episode ended. This type of tasks are "episodic tasks"  </li>
     <li> Continuing tasks: there is no ending to the task and the final time step could be T-> infinite.  </li>
     <li> In continuing tasks, furture return should be discounted to avoid infinite return, like this:  
-        <img src="./image/discounting.png" alt="upper confidence bound equation" width="40%" />  
-        
-        tao is the discounting factor ranging from 0 to 1
+        <img src="./image/discounting.png" alt="upper confidence bound equation" width="40%" />   
+        where tao is the discounting factor ranging from 0 to 1
     </li>
 </ul>
 
 #### 3.4 markov state property
 
-<img src="./image/markov_state_property.png" alt="" width="40%" />   
+<img src="./image/Markov_state_property.png" alt="" width="40%" />   
 
 The current state contains all information to make decision about the future, no past history is needed. This nice property is called markov state property. Example: a canon flying in air, knowing it's velocity and position, it's enough to predict future (don't need it's pass flying trajectory). Not all states satisfy markov state property, for example, in a conversation, what's said in the past does matter to what should be said in the future. 
 
