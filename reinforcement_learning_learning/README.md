@@ -125,4 +125,21 @@ addtional method: bayesian. Posterior sampling or Thompson sampleling. Very good
 
 
 ### Chapter 3. Finite Markov Decision Process
+<img src="./image/mdp.png" alt="upper confidence bound equation" width="30%" />   
+
+Three key points:
+<ul>
+    <li> actions of an agent  </li>
+    <li> states of environment  </li>
+    <li> reward </li>
+</ul>
+
+#### 3.3 returns:
+<ul>
+    <li> Episodic tasks: episode is a sequence of itneractions that ends with a terminal state. Next episode start with states refreshed regardless of how previous episode ended. This type of tasks are "episodic tasks"  </li>
+    <li> Continuing tasks: there is no ending to the task and the final time step could be T-> infinite.  </li>
+    <li> In continuing tasks, furture return should be discounted to avoid infinite return, like this:  
+        <img src="./image/discounting.png" alt="upper confidence bound equation" width="30%" /> 
+    </li>
+</ul>
 
