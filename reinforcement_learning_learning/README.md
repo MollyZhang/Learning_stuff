@@ -117,4 +117,12 @@ increases probability to explore action with higher "greedy potential".
     <li> the book provides a proof of the above algorithm.   </li>   
 </ul>
 
+#### 2.8 associate search
+Associate search is an intermediate between k-armed bandit problem and the full reinforcement learning problem. Associate search match action to state: chose x arm of the bandit if a color red is shown. If actions are allowered to influence the next state then it's a full reinforcement learning problem. 
+
+#### summary
+addtional method: bayesian. Posterior sampling or Thompson sampleling. Very good but computationally infeasible to compute exact solution. 
+
+
+### Chapter 3. Finite Markov Decision Process
 
