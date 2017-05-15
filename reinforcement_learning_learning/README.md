@@ -89,7 +89,7 @@ Problem: multiple slot machines, each with different reward probablilities that 
 
 (I simulated the multi-armed bandit problem as described in the book and implemented epsilon-greedy algorithm [here](https://github.com/MollyZhang/Learning_stuff/blob/master/reinforcement_learning_learning/examples/Multi-armed_bandits.ipynb))
 
-#### 2.3 Reward estimation:
+#### 2.3, 2.4 Reward estimation:
 <ul>
     <li>
     First, sample average: estimated reward is calcualted as sampled average of all the rewards when action are performed   
@@ -97,4 +97,15 @@ Problem: multiple slot machines, each with different reward probablilities that 
     <li>
     Second, exponential recent-weighted average, Qn = Qn-1 + alpha *  (Qn - Qn-1) where alpha is a constant between (0,1]  
     </li>
+    obviously recent-weighted average is better than sample average in nonstationary problems (where reward changes)
 </ul>
+
+#### 2.5 optimistic intial value
+Overly optimistic initial value estimate helps greedy method because it encourages exploration in the beginning.
+
+#### 2.6 upper confidence bound action selection
+increases probability to explore action with higher "greedy potential".
+
+
+
+
