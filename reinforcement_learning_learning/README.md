@@ -81,7 +81,20 @@ some disccusions:
 Problem: multiple slot machines, each with different reward probablilities that are unknown. How can one maximize reward? Hint: balance exploitation and exploration with reinforcement learning. 
 
 #### 2.2 Simpler methods:
-greedy: get a sample average of reward function of each bandit and greedily always select the bandit highest estimated reward.  
-$\epsilon$-greedy: like greedy method, but with probablility of $\epsilon$ explore alternative options. 
+<ul>
+    <li>
+    greedy: get a sample average of reward function of each bandit and greedily always select the bandit highest estimated reward.  </li>
+    <li> epsilon-greedy: like greedy method, but with probablility of epsilon, explore alternative options.  </li> 
+</ul>
 
+(I simulated the multi-armed bandit problem as described in the book and implemented epsilon-greedy algorithm [here](https://github.com/MollyZhang/Learning_stuff/blob/master/reinforcement_learning_learning/examples/Multi-armed_bandits.ipynb))
 
+#### 2.3 Reward estimation:
+<ul>
+    <li>
+    First, sample average: estimated reward is calcualted as sampled average of all the rewards when action are performed   
+    </li>
+    <li>
+    Second, exponential recent-weighted average, Qn = Qn-1 + alpha *  (Qn - Qn-1) where alpha is a constant between (0,1]  
+    </li>
+</ul>
