@@ -109,13 +109,12 @@ increases probability to explore action with higher "greedy potential".
 
 #### 2.7 gradient bandit - SGD update of action preference
 <ul>
-<li> Use preference Ht(a) to replace estimated Reward Q(a)  </li>
-<li> the probablility of picking an action is a softmax distribution of each action's preferences:  
-    <img src="./image/tao_bandit.jpg" alt="preference softmax" width="40%" />   </li>
-<li> preferences can be updated by stochastic gradient descent:  
-
-    <img src="./image/sgd_bandit.jpg" alt="preference softmax" width="40%" />    </li>
-<li> the book provides a proof of the above algorithm.   </li>   
+    <li> Use preference Ht(a) to replace estimated Reward Q(a)  </li>
+    <li> the probablility of picking an action is a softmax distribution of each action's preferences:  
+         <img src="./image/tao_bandit.jpg" alt="preference softmax" width="40%" />   </li>
+    <li> preferences can be updated by stochastic gradient descent:  
+         <img src="./image/sgd_bandit.jpg" alt="preference softmax" width="40%" />    </li>
+    <li> the book provides a proof of the above algorithm.   </li>   
 </ul>
 
 
