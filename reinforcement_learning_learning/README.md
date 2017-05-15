@@ -113,7 +113,7 @@ increases probability to explore action with higher "greedy potential".
     <li> the probablility of picking an action is a softmax distribution of each action's preferences:  
          <img src="./image/tao_bandit.png" alt="preference softmax" width="30%" />   </li>
     <li> preferences can be updated by stochastic gradient descent:  
-         <img src="./image/sgd_bandit.png" alt="preference softmax" width="30%" />    </li>
+         <img src="./image/sgd_bandit.png" alt="preference softmax" width="50%" />    </li>
     <li> the book provides a proof of the above algorithm.   </li>   
 </ul>
 
