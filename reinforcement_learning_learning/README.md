@@ -148,9 +148,10 @@ Three key points:
 
 <img src="./image/Markov_state_property.png" alt="" width="40%" />   
 
-The current state contains all information to make decision about the future, no past history is needed. This nice property is called markov state property. Example: a canon flying in air, knowing it's velocity and position, it's enough to predict future (don't need it's pass flying trajectory). Not all states satisfy markov state property, for example, in a conversation, what's said in the past does matter to what should be said in the future. 
+The current state contains all information to make decision about the future, no past history is needed. This nice property is called markov state property. Example: a canon flying in air, knowing it's velocity and position, it's enough to predict future (don't need it's pass flying trajectory). Not all states satisfy markov state property, for example, in a conversation, what's said in the past does matter to what should be said in the future. However, even if a process is non-markov state, it can be reasonably well represented if assuming a markov state property. 
 
-
+#### 3.5 Markov decision process
+<img src="./image/mdp_triple.jpg" alt="" width="80%" />   
 
 
 
