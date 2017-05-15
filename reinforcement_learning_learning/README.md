@@ -103,9 +103,19 @@ Problem: multiple slot machines, each with different reward probablilities that 
 #### 2.5 optimistic intial value
 Overly optimistic initial value estimate helps greedy method because it encourages exploration in the beginning.
 
-#### 2.6 upper confidence bound action selection
-increases probability to explore action with higher "greedy potential".
+#### 2.6 upper confidence bound (UCB) action selection
+increases probability to explore action with higher "greedy potential".  
+<img src="./image/ubc.jpg" alt="upper confidence bound equation" width="40%" />
 
+#### 2.7 gradient bandit - SGD update of action preference
+<ul>
+<li> Use preference Ht(a) to replace estimated Reward Q(a)  </li>
+<li> the probablility of picking an action is a softmax distribution of each action's preferences:  
+    <img src="./image/tao_bandit.jpg" alt="preference softmax" width="40%" />   </li>
+<li> preferences can be updated by stochastic gradient descent:  
 
+    <img src="./image/sgd_bandit.jpg" alt="preference softmax" width="40%" />    </li>
+<li> the book provides a proof of the above algorithm.   </li>   
+</ul>
 
 
