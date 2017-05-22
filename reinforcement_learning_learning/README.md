@@ -155,20 +155,20 @@ The current state contains all information to make decision about the future, no
 
 #### 3.7 value function
 value function of a state given policy π (evaluate how good a state is given a policy):  
-<img src="./image/v_s.png" alt="" width="80%" />   
+<img src="./image/v_s.png" alt="" width="40%" />   
 
 value function of a (state, action) pair given policy π (evaluate how good of a move is given state and policy):  
-<img src="./image/q_s_a.png" alt="" width="80%" />   
+<img src="./image/q_s_a.png" alt="" width="40%" />   
 
 v_π and q_π can be estimated from sample average of many random actions by "Monte Carlo methods". 
 
 value function can be expressed as "Bellman equation" where value of a state equal to immediate reward plus future reward of next state. Immediate reward equals to summing over reward of all possible (s, a, s') triple given current state, and furture rewad is summing over transition probability from (s, a) to s' and future value function v(s'):  
-<img src="./image/bellman.png" alt="" width="80%" />   
+<img src="./image/bellman.png" alt="" width="50%" />   
 
 like wise, bellman equation for q(s,a) is expressed as:  
-<img src="./image/bellman2.JPG" alt="" width="80%" />   
+<img src="./image/bellman2.JPG" alt="" width="60%" />   
 
-
+Example: grid world. 
 
 
 
