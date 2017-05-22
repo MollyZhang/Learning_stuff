@@ -49,8 +49,8 @@ define value function as probability of winning a game when playing X:
 > if there are three Os in a row or a board is filled up, then the probabaility of winning is 0  
 > for all other cases, value function is initialized as 0.5
 then greedily update each state's value function to the value of its subsequent states, in other words:  
-V(s) <-- V(s) + \alpha[V(s')-V(s)]  
-where \alpha is the learning rate and V(s') -V(s) is the learning rate difference before and after state transition. In other words, if state s' has a higher value function than state s, then state s's value function is moved to higher as well. This process is repeated until all value converges. This method works well for tick-tack-toe game.
+V(s) <-- V(s) + α[V(s')-V(s)]  
+where α is the learning rate and V(s') -V(s) is the learning rate difference before and after state transition. In other words, if state s' has a higher value function than state s, then state s's value function is moved to higher as well. This process is repeated until all value converges. This method works well for tick-tack-toe game.
 
 some disccusions:  
 <ul>
@@ -95,7 +95,7 @@ Problem: multiple slot machines, each with different reward probablilities that 
     First, sample average: estimated reward is calcualted as sampled average of all the rewards when action are performed   
     </li>
     <li>
-    Second, exponential recent-weighted average, Qn = Qn-1 + alpha *  (Qn - Qn-1) where alpha is a constant between (0,1]  
+    Second, exponential recent-weighted average, Qn = Qn-1 + α *  (Qn - Qn-1) where α is a constant between (0,1]  
     </li>
     obviously recent-weighted average is better than sample average in nonstationary problems (where reward changes)
 </ul>
@@ -140,18 +140,34 @@ Three key points:
     <li> Continuing tasks: there is no ending to the task and the final time step could be T-> infinite.  </li>
     <li> In continuing tasks, furture return should be discounted to avoid infinite return, like this:  
         <img src="./image/discounting.png" alt="upper confidence bound equation" width="40%" />   
-        where tao is the discounting factor ranging from 0 to 1
+        where γ is the discounting factor ranging from 0 to 1
     </li>
 </ul>
 
-#### 3.4 markov state property
+#### 3.5 markov state property
 
 <img src="./image/Markov_state_property.png" alt="" width="40%" />   
 
 The current state contains all information to make decision about the future, no past history is needed. This nice property is called markov state property. Example: a canon flying in air, knowing it's velocity and position, it's enough to predict future (don't need it's pass flying trajectory). Not all states satisfy markov state property, for example, in a conversation, what's said in the past does matter to what should be said in the future. However, even if a process is non-markov state, it can be reasonably well represented if assuming a markov state property. 
 
-#### 3.5 Markov decision process
+#### 3.6 Markov decision process
 <img src="./image/mdp_triple.jpg" alt="" width="80%" />   
+
+#### 3.7 value function
+value function of a state given policy π (evaluate how good a state is given a policy):  
+<img src="./image/v_s.png" alt="" width="80%" />   
+
+value function of a (state, action) pair given policy π (evaluate how good of a move is given state and policy):  
+<img src="./image/q_s_a.png" alt="" width="80%" />   
+
+v_π and q_π can be estimated from sample average of many random actions by "Monte Carlo methods". 
+
+value function can be expressed as "Bellman equation" where value of a state equal to immediate reward plus future reward of next state. Immediate reward equals to summing over reward of all possible (s, a, s') triple given current state, and furture rewad is summing over transition probability from (s, a) to s' and future value function v(s'):  
+<img src="./image/bellman.png" alt="" width="80%" />   
+
+like wise, bellman equation for q(s,a) is expressed as:  
+<img src="./image/bellman2.JPG" alt="" width="80%" />   
+
 
 
 
