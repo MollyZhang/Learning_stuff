@@ -168,7 +168,7 @@ value function can be expressed as "Bellman equation" where value of a state equ
 like wise, bellman equation for q(s,a) is expressed as:  
 <img src="./image/bellman2.JPG" alt="" width="60%" />   
 
-Example: grid world. 
+Example: I implement calculating value function of [gridworld](https://github.com/MollyZhang/Learning_stuff/blob/master/reinforcement_learning_learning/examples/gridworld.ipynb) given random policy. 
 
 
 
