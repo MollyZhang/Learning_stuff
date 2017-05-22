@@ -170,5 +170,22 @@ like wise, bellman equation for q(s,a) is expressed as:
 
 Example: I implement calculating value function of [gridworld](https://github.com/MollyZhang/Learning_stuff/blob/master/reinforcement_learning_learning/examples/gridworld.ipynb) given random policy. 
 
+#### 3.8 optimal value function
+A policy π > π' if and only if Vπ(s) > Vπ'(s) for all s. In that case π is optimal policy which generates optimal value functions. The goal of leanring is to find the optimal policy (and optimal value functions).  
+<img src="./image/optimal_v.JPG" alt="" width="60%" />  
+These Bellman optimality equations can be explicitly solved by exhaustively looking ahead at all possibilities, such as in the example of the [gridworld](https://github.com/MollyZhang/Learning_stuff/blob/master/reinforcement_learning_learning/examples/gridworld.ipynb) where I analytically computed an optimal value function and best policy. However, this solution relies on three assumptions which are usually not true in practice:  
+1. we know the dynamics of the environment. P(s', r|s, a)  
+2. we have the resource for computation the computational complexity of bruteforce exhaustive search. 
+3. problem satisfy Markov property.  
+
+For tasks that don't meet these three assumptions, approximate solutions are used, which are introduced later in book. 
+
+
+
+
+
+
+
+
 
 
