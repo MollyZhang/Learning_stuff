@@ -194,19 +194,21 @@ the book proved a "policy improvement thereom", shown below:
 This means if one were to greedily choose the actions with more reward at each state as shown in this equaltion:
 <img src="./image/greedy_policy_update.png" alt="" width="20%" />, it's going to lead to a policy that's strictly better than a policy not following best action at each state. Therefore a greedy policy is a better policy in the long run as well. 
 
-
-
-
-
 #### 4.3 Policy Iteration
+The general idea of a policy iteration works like this:  
+<img src="./image/policy_iter1.png" alt="" width="60%" />  
+An intial policy π0 is initialized, an initial value function v0 is calcuated based on π0, then π is updated to pick better actions according to v0, and then v is updated according to new policy. The evaluation step is to calcuate v based on π and the improvement step is to choose π based on v. This process iterates until v is not getting any bigger anymore. The detailed algorithm is shown below:  
+<img src="./image/policy_iter2.png" alt="" width="60%" />  
 
 #### 4.4 Value Iteration
+policy iteration could be slow because at each iteration a value function needs to be calculated and then policy is to be updated incrementally. Instead of that, one could simply improve the value function iteratively, and then choose a final optimal policy after getting optimal value function, shown bellow:  
+<img src="./image/value_iteration.png" alt="" width="60%" />   
+
+#### 4.5 Summary
+Dynamic programming requires knowing about the model of the environment, which is not often known in real cases. DP also suffers from curse of dimensionality where computational complexity increased exponentially with the number of state variables. 
 
 
-
-
-
-
+### Chapter 5: Monte Carlo Methods
 
 
 
