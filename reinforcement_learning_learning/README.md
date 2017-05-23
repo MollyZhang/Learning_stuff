@@ -180,6 +180,33 @@ These Bellman optimality equations can be explicitly solved by exhaustively look
 
 For tasks that don't meet these three assumptions, approximate solutions are used, which are introduced later in book. 
 
+### Chapter4: Dynamic Programming
+Solving the bellman equation directly knowing P(s',r|s,a).
+
+#### 4.1 Policy Evaluation
+calcuate value function of each state given policy π  
+<img src="./image/policy_eval.png" alt="" width="80%" />  
+
+#### 4.2 Policy Improvement
+the book proved a "policy improvement thereom", shown below:  
+<img src="./image/policy_improv.JPG" alt="" width="40%" />  
+
+This means if one were to greedily choose the actions with more reward at each state as shown in this equaltion:
+<img src="./image/greedy_policy_update.png" alt="" width="20%" />, it's going to lead to a policy that's strictly better than a policy not following best action at each state. Therefore a greedy policy is a better policy in the long run as well. 
+
+
+
+
+
+#### 4.3 Policy Iteration
+
+#### 4.4 Value Iteration
+
+
+
+
+
+
 
 
 
