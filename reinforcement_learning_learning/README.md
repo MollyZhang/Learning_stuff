@@ -236,3 +236,24 @@ All the previous monte carlo methods are "on-policy". In an off-policy methods, 
 Almost all off-policy methods utilizes "importance sampling":   
 Weighting returns according to the relative probability of their trajectories occuring under the target and behavoir policies, and the relative probability is called "importance ratio".  
 <img src="./image/monte_carlo_off_policy.JPG" alt="" width="90%" /> 
+
+### Chapter6: Temporal-Difference Learning
+Compare TD against monte carlo method
+<ul>
+    <li>constant-α Monte Carlo: V(s) = V(s) + α[Gt-V(s)], in which Gt is the reward and is known at the end of an episode</li>
+    <li>TD method V(st) = V(st) + α[Rt+1 + γV(st+1) - V(st)] doesn't have to wait until the end of the episode to determine the increment to V(s), it just need to wait till the next time step. TD update based on exisiting estimate, and these property makes it a bootstrapping method<li>
+    <img src="./image/td0_value.png" alt="" width="50%" /> 
+</ul>
+
+#### 6.4 on-Policy iteration for TD method:
+SARSA stands for St, At, Rt+1, St+1, At+1 the quintuple of events that make up a transtion from one state-action pair to the next.  
+<img src="./image/sarsa.png" alt="" width="50%" /> 
+
+#### 6.5 Q-learning: off-policy TD control
+Q learning is awesome because it's directly learns optimal Q\* without using or refering to specific policy at all.  
+<img src="./image/q_equation.png" alt="" width="60%" />   
+<img src="./image/q_algorithm.png" alt="" width="60%" />  
+
+
+
+
