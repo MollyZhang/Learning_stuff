@@ -214,16 +214,25 @@ Monte carlo methods refers to using random sampling and sample average as a way 
 Compared to dynamic programming, monte carlo methods doesn't need to calculate Pr(s',r|a,s) for all states, and this is great because computationally and conceptually it's much easier.  
 <img src="./image/monte_carlo2.JPG" alt="" width="40%" />   
 
-#### 5.2 Monte Carlo Estimation of Action Values
-Without knowing environmental model, it's not enough to just have value of all states, Monte carlo method's primary goal is to estimate q(s,a).
+Without knowing environmental model, it's not enough to just have value of all states, Monte carlo method's primary goal is to estimate q(s,a), and then formulate the optimal policy by choosing the action to maximize q(s,a) for all action at a given state. 
 
-#### 5.3 Monte Carlo Control
-By picking the policy that find the action to maximize q(s,a) for all action at a given state. To address the problem of not all states are visited, one could do 'exploring starts' where each interaction (episode) is set to start with a specific state and all actions are carried out with a non-zero probability.   
-<img src="./image/monte_carlo3.png" alt="" width="60%" />   
+One problem that needs to be addressed: what if not all states are visited? The book provides two solutions:
+<ul>
+    <li>'exploring starts' where each interaction (episode) is set to start with a specific state and all possible states are used as starting states.
+        <img src="./image/monte_carlo3.png" alt="" width="60%" />   
+    </li>
+    <li> Instead of a deterministic policy, use a ε-soft policy where at probablilty ε a non-optimal policy action is explored.
+        <img src="./image/monte_carlo_e_greedy.png" alt="" width="60%" /> 
+    </li>
+</ul>
 
+#### 5.5 off-policy prediction via importance sampling
+<ul>
+    <li>On-policy: attempt to evaluate or improve policy that is used to make decisions in collecting data and interacting with environment</li>
+    <li>Off-policy: evaluate or improve a policy different fromt hat used to generate the data</li>
+</ul>
+All the previous monte carlo methods are "on-policy". In an off-policy methods, there is a "behavoir policy" that genrates data, for example, a policy that randomly pick from avaiable actions to encourage maximum exploration, and there is a "target policy" where it's more optimal and we want to learn its the value function, but it's not used to generate data. 
 
-
-
-
-
-›
+Almost all off-policy methods utilizes "importance sampling":   
+Weighting returns according to the relative probability of their trajectories occuring under the target and behavoir policies, and the relative probability is called "importance ratio".  
+<img src="./image/monte_carlo_off_policy.JPG" alt="" width="90%" /> 
