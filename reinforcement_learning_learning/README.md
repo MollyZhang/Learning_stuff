@@ -209,12 +209,21 @@ Dynamic programming requires knowing about the model of the environment, which i
 
 
 ### Chapter 5: Monte Carlo Methods
+Monte carlo methods refers to using random sampling and sample average as a way to estimate value function.  
+<img src="./image/monte_carlo1.png" alt="" width="60%" />   
+Compared to dynamic programming, monte carlo methods doesn't need to calculate Pr(s',r|a,s) for all states, and this is great because computationally and conceptually it's much easier.  
+<img src="./image/monte_carlo2.JPG" alt="" width="40%" />   
+
+#### 5.2 Monte Carlo Estimation of Action Values
+Without knowing environmental model, it's not enough to just have value of all states, Monte carlo method's primary goal is to estimate q(s,a).
+
+#### 5.3 Monte Carlo Control
+By picking the policy that find the action to maximize q(s,a) for all action at a given state. To address the problem of not all states are visited, one could do 'exploring starts' where each interaction (episode) is set to start with a specific state and all actions are carried out with a non-zero probability.   
+<img src="./image/monte_carlo3.png" alt="" width="60%" />   
 
 
 
 
 
 
-
-
-
+›
