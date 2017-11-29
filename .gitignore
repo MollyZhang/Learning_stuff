@@ -7,3 +7,4 @@
 *.pyc
 -psl_learning/psl-example/classpath.out
 -psl_learning/psl-example/target
+*MNIST_data
