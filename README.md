@@ -15,15 +15,6 @@ I find the best way for me to learn new things is to implement them, hence this 
 
 ### Groovy_learning
 ### Java_learning
-> #### Abstraction
-> #### Commandline_argument
-> #### Constructor
-> #### Exception
-> #### FileIO
-> #### Hash Set Map
-> #### HelloWorld
-> #### jdb (java debugger)
-> #### package (package importing)
 
 ### Jekyll_learning
 
