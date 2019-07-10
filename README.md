@@ -1,12 +1,16 @@
 # Learning_stuff
-Best way to learn something is to implement it as an example, and this is the motivation for this repo. 
-When I learn a new thing, I implemented it and post the code and result here. 
+I find the best way for me to learn new things is to implement them, hence this repo -- Code implementation of new ideas, concepts, classes and packages etc. 
 
-## Structure of this repository (updated 4-28-2017)
+## Outline (updated 7-10-2019)
+
+### Deep_learning
+> #### pytorch
+> #### tensorflow
 
 ### ML_learning (machine learning learning...)
 > #### NMF (Non-negative Matrix Factorization)
-> #### RBM (Restricted Boltzman Machine)
+> #### PCA
+> #### clustering
 > #### scikit-learn
 
 ### Groovy_learning
@@ -30,11 +34,22 @@ When I learn a new thing, I implemented it and post the code and result here.
 
 ### Maven
 
+### pandas_Learning
+
 ### Python_Learning
 > #### Django
 > #### module import
 > #### pdb (python commandline debugger)
 > #### Unit test
 
+### reinforcement_learning_learning
+> #### README.md (notes about Richard Suttion RL book)
+> #### examples
+>> multi-arm bandits
+
+>> gridword
+
 ### Think bayes book
-### Unicode
+### unicode
+### visualization
+
